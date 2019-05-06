@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>asd</title>
+    </head>
+    <body style="margin-left:25%;margin-right:25%">
+        <hr>
+        <input id='search' type='input' onkeyup="search_stuff(this.value)" /> 
+        <p id='matches'></p>
+
+        <script>
+
+            const stuff = [
+                {
+                    title: "one",
+                    topic: "someshit"    
+                },
+                {
+                    title: "two",
+                    topic: "anything"
+                },
+                {
+                    title: "three",
+                    topic: "trash"
+                },
+                {
+                    title: "four",
+                    topic: "a topic"
+                },
+                {
+                    title: "six",
+                    topic: "why this???"
+                },
+                {
+                    title: "asd",
+                    topic: "there"
+                },
+                {
+                    title: "twenty",
+                    topic: "furthermore"
+                },
+                {
+                    title: "threat",
+                    topic: "awesome"
+                }
+            ];
+
+            function search_stuff(input){
+                let match = [];
+
+                if(input != ''){
+
+                    stuff.map((item) => {
+                        if(item.title.includes(input) || item.topic.includes(input)){
+                            match.push(item);
+                        }
+                    });
+
+                    document.getElementById('matches').innerHTML = match.map((item) => {
+                        return 'title: ' + item.title + '<br> topic: ' + ' ' + item.topic + '<br><hr>';
+                    });
+
+                    if(match.length == 0){
+                        document.getElementById('matches').innerHTML = 'No matches found';
+                    }
+                    
+                }else{
+                    document.getElementById('matches').innerHTML = '';
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
