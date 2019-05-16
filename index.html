@@ -58,7 +58,7 @@
 
                     document.getElementById('matches').innerHTML = match.map((item) => {
                         return 'title: ' + item.title + '<br> topic: ' + ' ' + item.topic + '<br><hr>';
-                    });
+                    }).join('');
 
                     if(match.length == 0){
                         document.getElementById('matches').innerHTML = 'No matches found';
