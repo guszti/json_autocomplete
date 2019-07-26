@@ -44,6 +44,10 @@
                     "topic": "awesome"
                 }
             ];
+			
+			document.getElementById('matches').innerHTML = stuff.map((item) => {
+				return 'title: ' + item.title + '<br> topic: ' + ' ' + item.topic + '<br><hr>';
+			}).join('');
 
             function search_stuff(input){
                 let match = [];
@@ -65,7 +69,9 @@
                     }
 
                 }else{
-                    document.getElementById('matches').innerHTML = '';
+                    document.getElementById('matches').innerHTML = stuff.map((item) => {
+						return 'title: ' + item.title + '<br> topic: ' + ' ' + item.topic + '<br><hr>';
+					}).join('');
                 }
             }
 
